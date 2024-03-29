@@ -1,0 +1,38 @@
+﻿@* 
+    You need to pass the object name in the view
+@model List<Category>*@
+@model List<Category>
+<div class="container">
+    <div class="row pt-4 pb-3" >
+        <div class="col-6">
+            <h2 class="text-primary">Category</h2>
+
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle">Create New Category </i>
+            </a>
+        </div>
+    </div>
+<table class="table table-bordered table-striped" >
+    <tr>
+        <th>
+           Category Name
+        </th>
+        <th>
+            Display Order
+        </th>
+       
+    </tr>
+    @*@foreach (var obj in Model) here model is @model from top u need to write in CApital MODEL*@
+    @foreach (var obj in Model.OrderBy(u=> u.DisplayOrder))
+    {
+      <tr>
+        <td>@obj.Name</td>
+        <td>@obj.DisplayOrder</td>
+       
+      </tr>
+    }
+
+</table>
+</div>
