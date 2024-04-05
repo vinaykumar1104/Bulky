@@ -113,7 +113,7 @@ namespace BulkyWeb.Controllers
         }
 
         // Deleting
-        // Deleting the view
+
         public IActionResult Delete(int? id)
         {
 
